@@ -3,6 +3,8 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+let notes = [];
+
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -30,8 +32,8 @@ const getNotes = () =>
     .then((response) => response.json())
     .catch((error) => console.error(error));
 
-const saveNote = (note) =>
-  fetch('/api/notes', {
+const saveNote = (note) => {
+  return fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +41,12 @@ const saveNote = (note) =>
     body: JSON.stringify(note),
   })
     .then((response) => response.json())
+    .then((data) => {
+      notes.push(data);
+      return data;
+    })
     .catch((error) => console.error(error));
+};
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -80,9 +87,7 @@ const handleNoteSave = () => {
     .catch((error) => console.error(error));
 };
 
-// Delete the clicked note
 const handleNoteDelete = (e) => {
-  // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
   const note = e.target.parentElement;
@@ -100,7 +105,6 @@ const handleNoteDelete = (e) => {
     .catch((error) => console.error(error));
 };
 
-// Sets the activeNote and displays it
 const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = {
@@ -111,7 +115,6 @@ const handleNoteView = (e) => {
   renderActiveNote();
 };
 
-// Sets the activeNote to an empty object and allows the user to enter a new note
 const handleNewNoteView = () => {
   activeNote = {};
   renderActiveNote();
@@ -125,7 +128,6 @@ const handleRenderSaveBtn = () => {
   }
 };
 
-// Render the list of note titles
 const renderNoteList = (notes) => {
   noteList.innerHTML = '';
 
@@ -167,13 +169,11 @@ const renderNoteList = (notes) => {
   }
 };
 
-// Gets notes from the server and renders them to the sidebar
 const getAndRenderNotes = () =>
   getNotes()
     .then((notes) => renderNoteList(notes))
     .catch((error) => console.error(error));
 
-// Event listeners
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
@@ -181,5 +181,4 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('input', handleRenderSaveBtn);
 }
 
-// Initial render
 getAndRenderNotes();
