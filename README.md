@@ -7,7 +7,6 @@ Note Taker is a web application that allows users to write and save notes. It pr
 - [Note Taker](#note-taker)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
-  - [Demo](#demo)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Technologies](#technologies)
@@ -20,16 +19,14 @@ Note Taker is a web application that allows users to write and save notes. It pr
 - View a list of saved notes and select a note to view its content.
 - Delete notes from the list.
 
-## Demo
 
-[Insert link to a live demo or a screenshot/gif of the application]
 
 ## Installation
 
 To run the Note Taker application locally, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Navigate to the project's directory.
+2. Navigate to the project's directory, and into the Develop directory.
 3. Install the required dependencies using the following command:
    ```npm install```
 4. Start the application using the following command:
@@ -38,8 +35,7 @@ To run the Note Taker application locally, follow these steps:
 
 ## Usage
 
-[Provide instructions on how to use the application. Include screenshots if necessary.]
-
+To add notes, add text to the boxes and click the save button. You can access previous notes by clicking them in the left column.
 ## Technologies
 
 - HTML
