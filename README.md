@@ -2,6 +2,12 @@
 
 Note Taker is a web application that allows users to write and save notes. It provides a simple and intuitive interface for creating, viewing, and deleting notes.
 
+![NT1](https://github.com/Gr1ssom/NotePad/assets/123666763/7f78ccc8-647b-42a7-ac42-8e30d11aacc2)
+![nt 2](https://github.com/Gr1ssom/NotePad/assets/123666763/55908791-0c9e-4c2e-bedd-4b2c20be9104)
+
+
+
+
 ## Table of Contents
 
 - [Note Taker](#note-taker)
