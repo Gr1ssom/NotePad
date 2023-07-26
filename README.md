@@ -27,7 +27,7 @@ Note Taker is a web application that allows users to write and save notes. It pr
 To run the Note Taker application locally, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Navigate to the project's directory, and into the Develop directory.
+2. Navigate to the project's directory.
 3. Install the required dependencies using the following command:
    ```npm install```
 4. Start the application using the following command:
