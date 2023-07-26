@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,7 +20,7 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
-  newNote.id = generateUniqueId();
+  newNote.id = uuidv4();
   const notes = getNotes();
   notes.push(newNote);
   saveNotes(notes);
