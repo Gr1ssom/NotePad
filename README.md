@@ -9,6 +9,7 @@ Note Taker is a web application that allows users to write and save notes. It pr
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
+- [Heroku Deployment](#heroku-deployment)
   - [Technologies](#technologies)
   - [License](#license)
 
@@ -36,6 +37,9 @@ To run the Note Taker application locally, follow these steps:
 ## Usage
 
 To add notes, add text to the boxes and click the save button. You can access previous notes by clicking them in the left column.
+
+# Heroku Deployment
+https://grissom-notepad-dbe3918029fb.herokuapp.com/
 ## Technologies
 
 - HTML
